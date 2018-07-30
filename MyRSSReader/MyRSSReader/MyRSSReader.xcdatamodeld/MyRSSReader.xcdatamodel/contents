@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G1510" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Content" representedClassName="Content" syncable="YES">
+        <attribute name="mainTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="element" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Element" inverseName="content" inverseEntity="Element" syncable="YES"/>
+    </entity>
+    <entity name="Data" representedClassName="Data" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="element" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Element" inverseName="data" inverseEntity="Element" syncable="YES"/>
+    </entity>
+    <entity name="Element" representedClassName="Element" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="content" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Content" inverseName="element" inverseEntity="Content" syncable="YES"/>
+        <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Data" inverseName="element" inverseEntity="Data" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Content" positionX="-189" positionY="-19" width="128" height="73"/>
+        <element name="Element" positionX="-20" positionY="-90" width="128" height="103"/>
+        <element name="Data" positionX="171" positionY="-55" width="128" height="118"/>
+    </elements>
+</model>
